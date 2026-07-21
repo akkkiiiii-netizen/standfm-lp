@@ -289,6 +289,114 @@ img { max-width: 100%; height: auto; display: block; }
   color: var(--ink-muted);
 }
 
+/* ========================= プロフィール ========================= */
+.profile { text-align: center; }
+
+.profile-photo {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  margin: 0 auto 2rem;
+  display: grid;
+  place-items: center;
+}
+
+/* 音がひろがっていくような、二重のやわらかいリング */
+.profile-photo .ring {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.profile-photo .ring-1 {
+  inset: 0;
+  background: var(--pale-blue);
+  opacity: 0.3;
+}
+.profile-photo .ring-2 {
+  inset: 14px;
+  background: var(--pearl-white);
+  opacity: 0.8;
+}
+
+.profile-photo img {
+  position: relative;
+  width: 236px;
+  height: 236px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 50% 20%;
+}
+
+.profile-role {
+  margin: 0 0 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--dusty-blue);
+}
+
+.profile-name {
+  margin: 0 0 1.25rem;
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  letter-spacing: 0.16em;
+}
+
+.profile-bio {
+  margin: 0 auto 2rem;
+  max-width: 30rem;
+  font-size: 0.875rem;
+  line-height: 2.15;
+  color: var(--ink-muted);
+}
+
+/* Threadsへのリンク */
+.link-threads {
+  display: inline-block;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--pale-blue);
+  color: var(--cta-deep);
+  font-size: 0.875rem;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  transition: border-color 0.3s ease;
+}
+.link-threads::after {
+  content: "↗";
+  margin-left: 0.4em;
+  font-size: 0.85em;
+}
+.link-threads:hover { border-color: var(--cta-deep); }
+
+/* ========================= 音の波形 ========================= */
+.wave {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  height: 26px;
+  margin: 0 0 1.75rem;
+}
+.wave i {
+  width: 3px;
+  border-radius: 99px;
+  background: var(--pale-blue);
+}
+/* 中央ほど高く、両端へなだらかに落とす */
+.wave i:nth-child(1)  { height: 20%; }
+.wave i:nth-child(2)  { height: 42%; background: var(--dusty-blue); }
+.wave i:nth-child(3)  { height: 70%; }
+.wave i:nth-child(4)  { height: 96%; background: var(--cta); }
+.wave i:nth-child(5)  { height: 58%; background: var(--dusty-blue); }
+.wave i:nth-child(6)  { height: 34%; }
+.wave i:nth-child(7)  { height: 78%; background: var(--dusty-blue); }
+.wave i:nth-child(8)  { height: 100%; background: var(--cta); }
+.wave i:nth-child(9)  { height: 46%; background: var(--dusty-blue); }
+.wave i:nth-child(10) { height: 26%; }
+.wave i:nth-child(11) { height: 62%; background: var(--dusty-blue); }
+.wave i:nth-child(12) { height: 30%; }
+.wave i:nth-child(13) { height: 18%; background: var(--soft-gray); }
+
 /* ========================= ④ CTA ========================= */
 .cta {
   padding: clamp(4.5rem, 12vw, 7.5rem) 0;
@@ -321,6 +429,17 @@ img { max-width: 100%; height: auto; display: block; }
   color: var(--ink-muted);
 }
 
+.cta-sub {
+  margin: 0.5rem 0 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-muted);
+}
+.cta-sub a {
+  color: var(--cta-deep);
+  text-underline-offset: 0.25em;
+}
+
 /* ========================= フッター ========================= */
 .site-footer {
   padding: 3.5rem 0;
@@ -328,11 +447,26 @@ img { max-width: 100%; height: auto; display: block; }
   border-top: 1px solid var(--misty-white);
 }
 .footer-name {
-  margin: 0 0 0.5rem;
+  margin: 0 0 1rem;
   font-family: var(--font-serif);
   font-size: 0.9375rem;
   letter-spacing: 0.14em;
 }
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.75rem;
+  justify-content: center;
+  margin: 0 0 1.25rem;
+  font-size: 0.8125rem;
+  letter-spacing: 0.08em;
+}
+.footer-links a {
+  color: var(--ink-muted);
+  text-decoration: none;
+}
+.footer-links a:hover { color: var(--cta-deep); }
 .copyright {
   margin: 0;
   font-size: 0.75rem;

@@ -4,18 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- ===================================================================
-       残りの作業は OGP画像（ogp.png）の設置と、下記 og:image の
-       絶対URLへの書き換えのみです。
-       =================================================================== -->
-
   <title>あきの整えちゃんねる｜色と、ことばと、わたしを整える時間</title>
   <meta name="description" content="「好き×似合う」で自分だけの魅力を。ファッションと色の印象、そして書いて心を整えること。イメージコンサルタントあきが、stand.fm でお話ししています。">
+
+  <!-- OGP。og:image はSNSのクローラが解決できるよう絶対URLで指定します -->
+  <meta property="og:site_name" content="あきの整えちゃんねる">
   <meta property="og:title" content="あきの整えちゃんねる｜色と、ことばと、わたしを整える時間">
   <meta property="og:description" content="「好き×似合う」で自分だけの魅力を。ファッションと色の印象、書いて心を整えること。stand.fm で配信中です。">
   <meta property="og:type" content="website">
-  <!-- og:image は公開後、絶対URL（https://〜/ogp.png）に書き換えてください -->
-  <meta property="og:image" content="/ogp.png">
+  <meta property="og:url" content="https://standfm-lp.vercel.app/">
+  <meta property="og:image" content="https://standfm-lp.vercel.app/ogp.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://standfm-lp.vercel.app/">
 
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -114,6 +117,44 @@
     </div>
   </section>
 
+  <!-- ==================== プロフィール ==================== -->
+  <section id="profile" class="section section-tinted">
+    <div class="container container-narrow">
+      <p class="section-eyebrow">PROFILE</p>
+      <h2 class="section-title">お話ししている人</h2>
+
+      <div class="profile">
+        <!-- 円形の写真のまわりに、音が広がるようなリングを重ねています -->
+        <div class="profile-photo">
+          <span class="ring ring-1" aria-hidden="true"></span>
+          <span class="ring ring-2" aria-hidden="true"></span>
+          <img src="profile.jpg" width="280" height="280"
+               alt="あき｜イメージコンサルタント" decoding="async">
+        </div>
+
+        <p class="profile-role">イメージコンサルタント</p>
+        <p class="profile-name">あき</p>
+
+        <div class="wave" aria-hidden="true">
+          <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+          <i></i><i></i><i></i><i></i><i></i><i></i>
+        </div>
+
+        <p class="profile-bio">
+          「“本当の私”がちゃんと伝わる印象戦略」をテーマに、
+          パーソナルカラー診断や自己理解のお手伝いをしています。<br>
+          好き（内面）と似合う（外見）が重なるところに、
+          その人らしい魅力があると考えています。
+        </p>
+
+        <a class="link-threads" href="https://www.threads.com/@aki.imecon"
+           target="_blank" rel="noopener">
+          配信の予定や日々の言葉は Threads で
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- ==================== ④ CTA ==================== -->
   <section id="listen" class="cta">
     <div class="container container-narrow">
@@ -124,6 +165,11 @@
       </p>
       <a href="https://stand.fm/channels/6a38f52ef16ae5c2da4b3464" class="btn btn-lg" target="_blank" rel="noopener">stand.fm で聴く</a>
       <p class="cta-note">フォローいただくと、ライブ配信の通知が届きます</p>
+      <p class="cta-sub">
+        配信の日時は
+        <a href="https://www.threads.com/@aki.imecon" target="_blank" rel="noopener">Threads</a>
+        でお知らせしています
+      </p>
     </div>
   </section>
 
@@ -132,6 +178,10 @@
 <footer class="site-footer">
   <div class="container">
     <p class="footer-name">あきの整えちゃんねる</p>
+    <p class="footer-links">
+      <a href="https://stand.fm/channels/6a38f52ef16ae5c2da4b3464" target="_blank" rel="noopener">stand.fm</a>
+      <a href="https://www.threads.com/@aki.imecon" target="_blank" rel="noopener">Threads</a>
+    </p>
     <p class="copyright">&copy; 2026 あき</p>
   </div>
 </footer>

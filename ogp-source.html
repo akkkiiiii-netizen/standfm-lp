@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"></head>
+<!--
+  QuickLook(qlmanage)は独自ビューポートで描画するため、
+  すべてのサイズを vw 単位で指定しています（100vw = 1200px 相当）。
+  正方形で描画されるので、中央 52.5vw の帯を切り出して 1200x630 にします。
+-->
+<body style="margin:0;width:100vw;height:100vw;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#F5F7F9">
+
+<div style="
+  position:relative;width:100vw;height:52.5vw;overflow:hidden;
+  background:
+    radial-gradient(60% 90% at 12% 0%, #B8D4E3 0%, rgba(184,212,227,0) 62%),
+    radial-gradient(50% 80% at 92% 100%, #F4F1EA 0%, rgba(244,241,234,0) 60%),
+    linear-gradient(135deg,#F5F7F9 0%,#FFFFFF 55%,#F5F7F9 100%);
+  display:flex;align-items:center;gap:5vw;padding:0 6.7vw;box-sizing:border-box;
+  font-family:'Hiragino Sans','Noto Sans JP',sans-serif;">
+
+  <!-- 左：テキスト -->
+  <div style="flex:1;min-width:0">
+    <div style="font-size:1.55vw;font-weight:600;letter-spacing:0.26em;color:#8FA8B8;margin-bottom:2.2vw">
+      STAND.FM
+    </div>
+
+    <div style="font-family:'Hiragino Mincho ProN','Yu Mincho',serif;
+                font-size:4.7vw;font-weight:500;line-height:1.62;letter-spacing:0.07em;color:#2E3A45">
+      色と、ことばと、<br>わたしを整える時間。
+    </div>
+
+    <!-- 音の波形 -->
+    <div style="display:flex;align-items:center;gap:0.52vw;height:2.6vw;margin:2.6vw 0 2.2vw">
+      <i style="width:0.34vw;height:22%;background:#B8D4E3;border-radius:99px"></i>
+      <i style="width:0.34vw;height:48%;background:#B8D4E3;border-radius:99px"></i>
+      <i style="width:0.34vw;height:80%;background:#8FA8B8;border-radius:99px"></i>
+      <i style="width:0.34vw;height:100%;background:#7B9ACC;border-radius:99px"></i>
+      <i style="width:0.34vw;height:62%;background:#8FA8B8;border-radius:99px"></i>
+      <i style="width:0.34vw;height:34%;background:#B8D4E3;border-radius:99px"></i>
+      <i style="width:0.34vw;height:72%;background:#8FA8B8;border-radius:99px"></i>
+      <i style="width:0.34vw;height:96%;background:#7B9ACC;border-radius:99px"></i>
+      <i style="width:0.34vw;height:44%;background:#B8D4E3;border-radius:99px"></i>
+      <i style="width:0.34vw;height:26%;background:#B8D4E3;border-radius:99px"></i>
+      <i style="width:0.34vw;height:58%;background:#8FA8B8;border-radius:99px"></i>
+      <i style="width:0.34vw;height:30%;background:#B8D4E3;border-radius:99px"></i>
+      <i style="width:0.34vw;height:18%;background:#C7CCD1;border-radius:99px"></i>
+    </div>
+
+    <div style="font-family:'Hiragino Mincho ProN','Yu Mincho',serif;
+                font-size:2.05vw;letter-spacing:0.13em;color:#5F6E7A">
+      あきの整えちゃんねる
+    </div>
+  </div>
+
+  <!-- 右：プロフィール写真 -->
+  <div style="position:relative;flex:none;width:31vw;height:31vw;display:flex;align-items:center;justify-content:center">
+    <!-- 外側のやわらかいリング -->
+    <div style="position:absolute;inset:0;border-radius:50%;background:#B8D4E3;opacity:0.28"></div>
+    <div style="position:absolute;inset:1.5vw;border-radius:50%;background:#F4F1EA;opacity:0.75"></div>
+    <img src="p.jpg" style="position:relative;width:26.5vw;height:26.5vw;border-radius:50%;object-fit:cover;object-position:50% 22%">
+  </div>
+
+</div>
+</body></html>

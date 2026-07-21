@@ -28,11 +28,32 @@ Vercel にそのままデプロイできます。
 2026年6〜7月の投稿から読み取った内容です。実際と異なる場合は
 `index.html` のヒーロー部分を修正してください。
 
-## 公開前に残っている作業
+## 画像について
 
-OGP画像 `ogp.png`（1200×630px）をこのフォルダに置き、`index.html` の
-`og:image` を絶対URL（`https://〜/ogp.png`）に書き換えてください。
-SNSでシェアされたときのサムネイルになります。
+| ファイル | 用途 | 寸法 |
+| --- | --- | --- |
+| `profile.jpg` | プロフィールセクションの写真 | 560×560 |
+| `ogp.jpg` | SNSシェア時のサムネイル | 1200×630 |
+
+どちらも元のイラスト（`~/Desktop/7B39F0CD-...png`, 1254×1254）から
+`sips` で書き出しています。
+
+### OGP画像の作り直し方
+
+`ogp.jpg` は HTML をレンダリングして生成しています。作り直す手順は次のとおりです。
+
+```sh
+# 1. レイアウトを編集（vw単位で記述されています）
+#    scratchpad/ogp.html
+# 2. HTMLをPNG化 → 中央を切り出し → 1200x630 に縮小 → JPEG化
+qlmanage -t -s 2400 -o . ogp.html
+sips -c 1260 2400 ogp.html.png --out crop.png
+sips -z 630 1200 crop.png --out ogp-full.png
+sips -s format jpeg -s formatOptions 86 ogp-full.png --out ogp.jpg
+```
+
+macOS の QuickLook は独自のビューポート幅で描画するため、`ogp.html` の
+サイズ指定はすべて `vw` 単位にしてあります。`px` で書くとレイアウトが崩れます。
 
 ## カラーパレット
 
