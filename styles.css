@@ -48,6 +48,17 @@ body {
 
 img { max-width: 100%; height: auto; display: block; }
 
+/* 日本語を文節単位で折り返す（「パーソナルカ／ラー診断」のような
+   語中での改行を防ぎます）。未対応ブラウザでは通常の折り返しになります。 */
+.hero-lead,
+.empathy-list li,
+.empathy-bridge,
+.topic p,
+.profile-bio,
+.cta-lead {
+  word-break: auto-phrase;
+}
+
 .container {
   width: min(100% - 2.5rem, var(--container));
   margin-inline: auto;
@@ -344,7 +355,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 .profile-bio {
   margin: 0 auto 2rem;
-  max-width: 30rem;
+  max-width: 32rem;
   font-size: 0.875rem;
   line-height: 2.15;
   color: var(--ink-muted);
