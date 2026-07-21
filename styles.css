@@ -474,16 +474,7 @@ img { max-width: 100%; height: auto; display: block; }
   color: var(--ink-muted);
 }
 
-/* ========================= スクロール演出 ========================= */
-.reveal {
-  opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 0.9s ease, transform 0.9s ease;
-}
-.reveal.is-visible { opacity: 1; transform: none; }
-
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .reveal { opacity: 1; transform: none; transition: none; }
   .btn:hover { transform: none; }
 }
