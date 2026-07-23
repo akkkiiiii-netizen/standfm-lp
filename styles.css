@@ -22,10 +22,10 @@
   --container:   1040px;
   --radius:      14px;
 
-  --font-serif:  "Hiragino Mincho ProN", "Yu Mincho", "YuMincho",
-                 "Noto Serif JP", serif;
-  --font-sans:   "Hiragino Sans", "Noto Sans JP", "Yu Gothic",
-                 -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif:  "Zen Old Mincho", "Hiragino Mincho ProN", "Yu Mincho",
+                 "YuMincho", "Noto Serif JP", serif;
+  --font-sans:   "Zen Kaku Gothic New", "Hiragino Sans", "Noto Sans JP",
+                 "Yu Gothic", -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 /* パレットが淡色前提のため、ライトテーマに固定しています */
@@ -152,7 +152,7 @@ img { max-width: 100%; height: auto; display: block; }
 .hero {
   position: relative;
   overflow: hidden;
-  padding: clamp(5rem, 14vw, 9rem) 0 clamp(4.5rem, 12vw, 8rem);
+  padding: clamp(3rem, 10vw, 9rem) 0 clamp(4.5rem, 12vw, 8rem);
   text-align: center;
   background:
     radial-gradient(70% 60% at 50% 0%, var(--pale-blue) 0%, transparent 62%),
@@ -492,7 +492,22 @@ img { max-width: 100%; height: auto; display: block; }
   color: var(--ink-muted);
 }
 
+/* ========================= スクロールでふわっと表示 =========================
+   .reveal は JavaScript が付与します。JSが動かない環境では
+   最初から表示されたまま（内容が消えない）になるよう設計しています。 */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .btn:hover { transform: none; }
+  /* 動きを控える設定の方には、アニメーションを無効化します */
+  .reveal { opacity: 1; transform: none; transition: none; }
 }
