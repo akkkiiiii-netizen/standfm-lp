@@ -208,6 +208,13 @@ img { max-width: 100%; height: auto; display: block; }
   color: var(--ink-muted);
 }
 
+/* ボタンの下に、雰囲気を添える水彩イラスト（背景は切り抜き済み） */
+.hero-image {
+  margin: clamp(2.5rem, 6vw, 4rem) auto 0;
+  max-width: 460px;
+}
+.hero-image img { width: 100%; }
+
 /* ========================= ② 共感 ========================= */
 .empathy-list {
   max-width: 34rem;
